@@ -24,10 +24,7 @@
 
     FB.AppEvents.logPageView();
 
-    FB.getLoginStatus(function(response) {
-      if (response.status === 'connected') {
-        var accessToken = response.authResponse.accessToken;
-        FB.api(
+    FB.api(
           '/149874075167476/feed',
           'GET',
           {},
@@ -35,8 +32,20 @@
               console.log(response);
           }
        );
-      } 
-    } );
+
+    // FB.getLoginStatus(function(response) {
+    //   if (response.status === 'connected') {
+    //     var accessToken = response.authResponse.accessToken;
+    //     FB.api(
+    //       '/149874075167476/feed',
+    //       'GET',
+    //       {},
+    //       function(response) {
+    //           console.log(response);
+    //       }
+    //    );
+    //   } 
+    // } );
 
      
   };
