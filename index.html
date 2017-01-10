@@ -16,6 +16,8 @@
 
 <script>
   window.fbAsyncInit = function() {
+
+    var data;
     FB.init({
       appId      : '840606712700068',
       xfbml      : true,
@@ -33,6 +35,7 @@
           {},
           function(response) {
               console.log(response);
+              data = response;
           }
        );
       } 
