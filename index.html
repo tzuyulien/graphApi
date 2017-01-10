@@ -30,24 +30,10 @@
           {},
           function(response) {
               console.log(response);
+              var ans = response;
+              console.log(ans);
           }
-       );
-
-    // FB.getLoginStatus(function(response) {
-    //   if (response.status === 'connected') {
-    //     var accessToken = response.authResponse.accessToken;
-    //     FB.api(
-    //       '/149874075167476/feed',
-    //       'GET',
-    //       {},
-    //       function(response) {
-    //           console.log(response);
-    //       }
-    //    );
-    //   } 
-    // } );
-
-     
+       );     
   };
 
   (function(d, s, id){
@@ -57,15 +43,6 @@
      js.src = "//connect.facebook.net/en_US/sdk.js";
      fjs.parentNode.insertBefore(js, fjs);
 
-     // FB.api(
-     //    '/149874075167476/feed',
-     //    'GET',
-     //    {},
-     //    function(response) {
-     //        console.log(response);
-     //    }
-     //);
-
    }(document, 'script', 'facebook-jssdk'));
 
   
@@ -74,6 +51,7 @@
 
 
 <div>hello world</div>
+
 
 </body>
 
