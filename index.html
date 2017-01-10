@@ -24,7 +24,10 @@
 
     FB.AppEvents.logPageView();
 
-    FB.api(
+    FB.getLoginStatus(function(response) {
+      if (response.status === 'connected') {
+        var accessToken = response.authResponse.accessToken;
+        FB.api(
           '/149874075167476/feed',
           'GET',
           {},
@@ -32,20 +35,8 @@
               console.log(response);
           }
        );
-
-    // FB.getLoginStatus(function(response) {
-    //   if (response.status === 'connected') {
-    //     var accessToken = response.authResponse.accessToken;
-    //     FB.api(
-    //       '/149874075167476/feed',
-    //       'GET',
-    //       {},
-    //       function(response) {
-    //           console.log(response);
-    //       }
-    //    );
-    //   } 
-    // } );
+      } 
+    } );
 
      
   };
@@ -56,15 +47,6 @@
      js = d.createElement(s); js.id = id;
      js.src = "//connect.facebook.net/en_US/sdk.js";
      fjs.parentNode.insertBefore(js, fjs);
-
-     // FB.api(
-     //    '/149874075167476/feed',
-     //    'GET',
-     //    {},
-     //    function(response) {
-     //        console.log(response);
-     //    }
-     //);
 
    }(document, 'script', 'facebook-jssdk'));
 
