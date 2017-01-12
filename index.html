@@ -27,6 +27,7 @@
     FB.AppEvents.logPageView();
 
     FB.getLoginStatus(function(response) {
+        console.log(response);
       if (response.status === 'connected') {
         var accessToken = response.authResponse.accessToken;
         FB.api(
